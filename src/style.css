@@ -1,0 +1,146 @@
+:root {
+    --header-footer-border: 2px solid rgba(0, 0, 0, 0.678);
+    --main-color: rgba(12, 0, 0, 0.377);
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#background {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url('./victoria-shes-UC0HZdUitWY-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 0, 0, 0.377);
+}
+
+#nav {
+    display: grid;
+    width: 50%;
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, minmax(50px, 1fr));
+    text-align: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.menu {
+    padding: 5px;
+    margin: 50px 10px 0 0;
+    transition-duration: .3s;
+}
+.menu:hover {
+    scale: 1.4;
+    cursor: pointer;
+}
+.selected {
+    scale: 1.4;
+    text-decoration: underline;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: auto;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 100px;
+}
+#content #title {
+    font-size: 8rem;
+    font-family: 'Dancing Script', cursive;
+}
+#content #description {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-weight: bolder;
+    opacity: 0;
+}
+#content button {
+    padding: 25px;
+    color: white;
+    font-size: 2rem;
+    outline: none;
+    border:rgba(0, 0, 0, 0.678);
+    background-color: rgba(0, 0, 0, 0.25);
+    margin-top: 50px;
+    transition-duration: .3s;
+    border-radius: 5px;
+}
+#content button:hover {
+    background-color: rgba(105, 155, 189, 0.411);
+
+}
+#newContent {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.5em;
+}
+
+@media only screen and (max-width: 750px) {
+    #content #title {
+        font-size: 4rem;
+
+    }
+    #content #description {
+        font-size: 2rem;
+
+    }
+    #content button {
+        font-size: 1em;;
+    }
+}
+
+.startAnimationRight {
+    animation: swipeRight .4s 1;
+    animation-fill-mode: forwards;
+}
+.startAnimationLeft {
+    animation: swipeLeft .4s 1;
+    animation-fill-mode: backwards;
+}
+.fadeIn {
+    animation: fadeIn .4s 1;
+    animation-delay: 1500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes swipeRight {
+    0% { left: 0; }
+    100% { left: 150% }
+}
+@keyframes swipeLeft {
+    0% { left: 150%; }
+    100% { left: 0; }
+}
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    
+    100% {
+      opacity: 100%;
+    }
+  }
+  
